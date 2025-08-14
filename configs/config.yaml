@@ -1,0 +1,68 @@
+# EquiFlex Pro Configuration
+system:
+  name: "EquiFlex Pro"
+  version: "1.0.0"
+  environment: "development"  # development, staging, production
+  
+data:
+  providers:
+    - name: "yfinance"
+      enabled: true
+      config:
+        timeout: 30
+    - name: "alpha_vantage"
+      enabled: false
+      config:
+        api_key: "${ALPHA_VANTAGE_API_KEY}"
+  
+  storage:
+    type: "postgresql"
+    host: "${DB_HOST}"
+    port: 5432
+    database: "${DB_NAME}"
+    user: "${DB_USER}"
+    password: "${DB_PASSWORD}"
+
+brokers:
+  interactive_brokers:
+    enabled: false
+    config:
+      host: "127.0.0.1"
+      port: 7497
+      client_id: 1
+      
+  alpaca:
+    enabled: true
+    config:
+      api_key: "${ALPACA_API_KEY}"
+      secret_key: "${ALPACA_SECRET_KEY}"
+      base_url: "https://paper-api.alpaca.markets"  # paper trading
+
+trading:
+  cash_allocation: 1000000  # $1M starting capital
+  max_position_size: 0.05   # 5% max per position
+  greek_limits:
+    max_delta: 100
+    max_gamma: 50
+    max_theta: -200
+    max_vega: 500
+    max_rho: 100
+  
+risk:
+  max_drawdown: 0.15        # 15% max drawdown
+  var_confidence: 0.95
+  stress_test_frequency: 3600  # seconds
+
+strategies:
+  enabled:
+    - "equity_long_short"
+    - "delta_neutral"
+    - "gamma_scalping"
+    - "theta_harvesting"
+  
+  rebalance_frequency: 300   # seconds
+  
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/equiflex.log"

@@ -1,0 +1,47 @@
+strategies:
+  equity_long_short:
+    name: "Multi-Factor Long-Short Equity"
+    enabled: true
+    allocation: 0.4
+    parameters:
+      lookback_period: 252
+      rebalance_frequency: "daily"
+      long_short_ratio: 1.0
+      factors:
+        - momentum
+        - value
+        - quality
+        - volatility
+    
+  delta_neutral:
+    name: "Delta Neutral Options"
+    enabled: true
+    allocation: 0.2
+    parameters:
+      target_delta: 0.0
+      delta_tolerance: 5.0
+      rehedge_threshold: 10.0
+      underlying_universe:
+        - "SPY"
+        - "QQQ"
+        - "IWM"
+    
+  gamma_scalping:
+    name: "Gamma Scalping Strategy"
+    enabled: true
+    allocation: 0.2
+    parameters:
+      target_gamma: 25.0
+      scalping_threshold: 0.5
+      profit_target: 0.02
+      stop_loss: 0.05
+    
+  theta_harvesting:
+    name: "Theta Harvesting Strategy"
+    enabled: true
+    allocation: 0.2
+    parameters:
+      min_theta: -50
+      days_to_expiry: 30
+      implied_vol_percentile: 0.8
+      profit_target: 0.5

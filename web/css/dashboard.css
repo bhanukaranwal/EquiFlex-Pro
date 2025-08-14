@@ -1,0 +1,162 @@
+/* Custom Dashboard Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e3e6f0;
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: 600;
+}
+
+.metric-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    color: #5a5c69;
+    font-size: 0.875rem;
+}
+
+.table td {
+    font-size: 0.875rem;
+    vertical-align: middle;
+}
+
+.badge {
+    font-size: 0.75rem;
+}
+
+.strategy-item {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #4e73df;
+}
+
+.strategy-status {
+    margin-left: auto;
+}
+
+.greek-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.greek-item:last-child {
+    border-bottom: none;
+}
+
+.greek-value {
+    font-weight: 600;
+}
+
+.positive {
+    color: #1cc88a;
+}
+
+.negative {
+    color: #e74a3b;
+}
+
+.risk-metric {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.risk-metric:last-child {
+    border-bottom: none;
+}
+
+.risk-value {
+    font-weight: 600;
+}
+
+.status-online {
+    background-color: #1cc88a !important;
+}
+
+.status-offline {
+    background-color: #e74a3b !important;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    .table-responsive {
+        font-size: 0.8rem;
+    }
+}
+
+/* Animation for real-time updates */
+.update-flash {
+    animation: flash 0.5s ease-in-out;
+}
+
+@keyframes flash {
+    0% { background-color: #fff3cd; }
+    100% { background-color: transparent; }
+}
+
+/* Custom scrollbar */
+.table-responsive {
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+.table-responsive::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

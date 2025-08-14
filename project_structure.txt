@@ -1,0 +1,80 @@
+EquiFlexPro/
+├── README.md
+├── requirements.txt
+├── setup.py
+├── docker-compose.yml
+├── Dockerfile
+├── .env.example
+├── .gitignore
+├── docs/
+│   ├── architecture.md
+│   ├── api_reference.md
+│   └── deployment_guide.md
+├── configs/
+│   ├── config.yaml
+│   ├── strategies.yaml
+│   └── risk_limits.yaml
+├── src/
+│   ├── __init__.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── engine.py
+│   │   ├── portfolio.py
+│   │   └── events.py
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── ingestion.py
+│   │   ├── providers.py
+│   │   └── storage.py
+│   ├── strategies/
+│   │   ├── __init__.py
+│   │   ├── base_strategy.py
+│   │   ├── equity_long_short.py
+│   │   ├── greek_strategies.py
+│   │   └── ml_strategies.py
+│   ├── greeks/
+│   │   ├── __init__.py
+│   │   ├── calculator.py
+│   │   ├── black_scholes.py
+│   │   └── numerical_methods.py
+│   ├── risk/
+│   │   ├── __init__.py
+│   │   ├── manager.py
+│   │   ├── metrics.py
+│   │   └── compliance.py
+│   ├── execution/
+│   │   ├── __init__.py
+│   │   ├── broker_interface.py
+│   │   ├── ib_adapter.py
+│   │   └── alpaca_adapter.py
+│   ├── ml/
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── forecasting.py
+│   │   └── reinforcement.py
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── app.py
+│   │   └── routes.py
+│   └── utils/
+│       ├── __init__.py
+│       ├── logging.py
+│       └── helpers.py
+├── tests/
+│   ├── __init__.py
+│   ├── test_greeks.py
+│   ├── test_strategies.py
+│   └── test_risk.py
+├── web/
+│   ├── index.html
+│   ├── css/
+│   ├── js/
+│   └── components/
+├── infrastructure/
+│   ├── terraform/
+│   ├── kubernetes/
+│   └── monitoring/
+└── scripts/
+    ├── setup.sh
+    ├── deploy.sh
+    └── backtest.py
